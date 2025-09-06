@@ -1,0 +1,94 @@
+/* === GLOBAL === */
+/* body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #2d3436;
+  margin: 0;
+  padding: 0;
+} */
+
+/* === NAVBAR === */
+.navbar {
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00b894;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 1rem;
+  font-weight: 500;
+  color: #2d3436;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #00b894;
+  text-decoration: underline;
+}
+
+#btn-nav {
+  /* margin-left: 1.5rem; */
+  font-weight: 500;
+  background-color:#01976c;
+
+  border: none;
+  transition: background-color 0.3s;
+}
+
+#btn-nav:hover {
+  background-color: #01976c;
+}
+
+/* === HERO SECTION === */
+.home {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+#title h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+#title p {
+  font-size: 1.1rem;
+  color: #636e72;
+  margin-top: 1rem;
+}
+
+/* #col img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+} */
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  #title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* #col {
+    text-align: center;
+  } */
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+}
+.img-fluid{
+width: 20%;
+/* margin-left:-90%; */
+}

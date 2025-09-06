@@ -1,0 +1,30 @@
+
+.connexion{
+    font-size: 20px;
+     padding: 2rem;
+  background: #fbfffd;
+  border-radius: 10px;
+  box-shadow: 0 0 15px hsl(0, 3%, 13%);
+  font-family: sans-serif;
+padding: 100px;
+   
+}
+.forme{
+  max-width:650px;
+  margin-left: 30%;
+  
+  place-items: center;
+}
+
+.btn{
+  border-radius: 8px;
+ 
+  padding: 0.6em 1.2em;
+ 
+  
+  background-color: #54d45a;
+  /* cursor: pointer; */
+  /* transition: border-color 0.25s; */
+}
+
+

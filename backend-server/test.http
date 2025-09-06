@@ -1,0 +1,129 @@
+GET http://localhost:5000/medicaments
+
+###
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "name": "hounaida",
+  "email": "hounaidaalibilal057@gmail.com",
+  "password": "54562",
+  "role": "admin"
+}
+
+
+###
+PATCH http://localhost:5000/auth/email-verify
+Content-Type: application/json
+
+{
+    "otp": 90902,
+    "otpToken": "c709bb82-39e1-4716-ac60-1c2cb9e21924",
+    "purpose": "verify-email"
+}
+
+###
+POST http://localhost:5000/auth/login
+Content-Type:application/json
+
+{
+    "email": "thalaadam14@gmail.com",
+    "password": "1234"
+}
+###
+POST http://localhost:5000/auth/ventes
+Content-Type: application/json
+
+{
+  "medicaments": [
+    {
+      "medicament": "68972a54794be053270f8639",
+      "quantite": 2,
+      "prix": 4.5
+    }
+  ],
+  "reduction": 1
+}
+
+###
+GET  http://localhost:5000/auth/getVentes
+
+###
+POST http://localhost:5000/auth/ajouterFournisseur
+Content-Type: application/json
+
+{
+  "nom": "afrah",
+  "contact": 60798764,
+  "produits": "vitamine c"
+}
+
+###
+
+GET http://localhost:5000/auth/listeFournisseurs
+
+###
+GET http://localhost:5000/medicaments/getMedicaments
+Content-Type: application/json
+
+{
+  "nom": "afrah",
+  "categorie": "12",
+  "stock": 10,
+  "prix": 500,
+ }
+
+###  Ajouter un médicament
+POST http://localhost:5000/medicaments
+Content-Type: application/json
+
+{
+  "nom": "Paracétamol",
+  "code": "PCT-100",
+  "categorie": "Antalgique",
+  "prix": 1500,
+  "stock": 20,
+  "seuilAlerte": 5,
+  "datePeremption": "2026-08-15"
+}
+
+###  Modifier un médicament
+PUT http://localhost:5000/medicaments/68972a54794be053270f8637
+Content-Type: application/json
+
+{
+  "stock": 50,
+  "prix": 2000
+}
+
+###  Supprimer un médicament
+DELETE http://localhost:5000/medicaments/68972a54794be053270f8637
+
+
+###  Obtenir les alertes stock & péremption
+GET http://localhost:5000/medicaments/alerts
+Content-Type: application/json
+
+
+###  Alertes détaillées
+GET http://localhost:5000/medicaments/alertesMedicaments
+Content-Type: application/json
+
+
+###  Importer un fichier Excel
+POST http://localhost:5000/medicaments/import
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="projet-fin-formation"; filename="medicaments.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./medicaments.xlsx
+--WebAppBoundary--
+
+
+###  Exporter médicaments en Excel
+GET http://localhost:5000/medicaments/export
+
+###  Clients
+GET http://localhost:5000/clients
