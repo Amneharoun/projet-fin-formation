@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const API = 'http://localhost:5000/medicaments';
+const API = 'http://localhost:3000/medicaments/';
 
 const emptyForm = {
   nom: '', code: '', categorie: '',
@@ -30,12 +30,12 @@ const MedicamentPage = () => {
   };
 
   const loadAlerts = async () => {
-    const res = await axios.get(`${APi}/alerts/check`);
+    const res = await axios.get(`${API}/alerts/check`);
     setAlerts(res.data.alerts || []);
   };
 
-  useEffect(() => { load(); loadAlerts(); }, []);     // initial
-  useEffect(() => { const id = setTimeout(load, 400); return () => clearTimeout(id); }, [q]); // recherche
+  useEffect(() => { load(); loadAlerts(); }, );     // initial
+  useEffect(() => { const id = setTimeout(load, 400); return () => clearTimeout(id); }, ); // recherche
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 

@@ -1,7 +1,7 @@
-GET http://localhost:5000/medicaments
+GET http://localhost:6000/medicaments
 
 ###
-POST http://localhost:5000/auth/register
+POST http://localhost:6000/auth/register
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 
 ###
-PATCH http://localhost:5000/auth/email-verify
+PATCH http://localhost:6000/auth/email-verify
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/auth/login
+POST http://localhost:6000/auth/login
 Content-Type:application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type:application/json
     "password": "1234"
 }
 ###
-POST http://localhost:5000/auth/ventes
+POST http://localhost:6000/auth/ventes
 Content-Type: application/json
 
 {
@@ -46,10 +46,10 @@ Content-Type: application/json
 }
 
 ###
-GET  http://localhost:5000/auth/getVentes
+GET  http://localhost:6000/auth/getVentes
 
 ###
-POST http://localhost:5000/auth/ajouterFournisseur
+POST http://localhost:6000/auth/ajouterFournisseur
 Content-Type: application/json
 
 {
@@ -60,10 +60,10 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:5000/auth/listeFournisseurs
+GET http://localhost:6000/auth/listeFournisseurs
 
 ###
-GET http://localhost:5000/medicaments/getMedicaments
+GET http://localhost:6000/medicaments/getMedicaments
 Content-Type: application/json
 
 {
@@ -74,7 +74,7 @@ Content-Type: application/json
  }
 
 ###  Ajouter un médicament
-POST http://localhost:5000/medicaments
+POST http://localhost:6000/medicaments
 Content-Type: application/json
 
 {
@@ -88,7 +88,7 @@ Content-Type: application/json
 }
 
 ###  Modifier un médicament
-PUT http://localhost:5000/medicaments/68972a54794be053270f8637
+PUT http://localhost:6000/medicaments/68972a54794be053270f8637
 Content-Type: application/json
 
 {
@@ -97,21 +97,21 @@ Content-Type: application/json
 }
 
 ###  Supprimer un médicament
-DELETE http://localhost:5000/medicaments/68972a54794be053270f8637
+DELETE http://localhost:6000/medicaments/68972a54794be053270f8637
 
 
 ###  Obtenir les alertes stock & péremption
-GET http://localhost:5000/medicaments/alerts
+GET http://localhost:6000/medicaments/alerts
 Content-Type: application/json
 
 
 ###  Alertes détaillées
-GET http://localhost:5000/medicaments/alertesMedicaments
+GET http://localhost:6000/medicaments/alertesMedicaments
 Content-Type: application/json
 
 
 ###  Importer un fichier Excel
-POST http://localhost:5000/medicaments/import
+POST http://localhost:6000/medicaments/import
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 
 --WebAppBoundary
@@ -123,7 +123,7 @@ Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ###  Exporter médicaments en Excel
-GET http://localhost:5000/medicaments/export
+GET http://localhost:6000/medicaments/export
 
 ###  Clients
-GET http://localhost:5000/clients
+GET http://localhost:6000/clients

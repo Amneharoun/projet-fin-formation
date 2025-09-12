@@ -18,7 +18,7 @@ export default function Commandes() {
 
   const fetchCommandes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/commandes");
+      const response = await axios.get("http://localhost:3000/commandes");
       setCommandes(response.data);
     } catch (error) {
       console.error("Erreur lors du chargement des commandes:", error);
@@ -27,7 +27,7 @@ export default function Commandes() {
 
   const fetchFournisseurs = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/auth/listeFournisseurs");
+      const response = await axios.get("http://localhost:3000/auth/listeFournisseurs");
       setFournisseurs(response.data);
     } catch (error) {
       console.error("Erreur lors du chargement des fournisseurs:", error);
@@ -37,7 +37,7 @@ export default function Commandes() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/commandes", formData);
+      await axios.post("http://localhost:3000/commandes", formData);
       fetchCommandes();
       resetForm();
     } catch (error) {
@@ -47,7 +47,7 @@ export default function Commandes() {
 
   const updateStatut = async (id, newStatut) => {
     try {
-      await axios.put(`http://localhost:5000/commandes/${id}/statut`, { statut: newStatut });
+      await axios.put(`http://localhost:3000/commandes/${id}/statut`, { statut: newStatut });
       fetchCommandes();
     } catch (error) {
       console.error("Erreur lors de la mise à jour du statut:", error);
@@ -57,7 +57,7 @@ export default function Commandes() {
   const handleDelete = async (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cette commande ?")) {
       try {
-        await axios.delete(`http://localhost:5000/commandes/${id}`);
+        await axios.delete(`http://localhost:3000/commandes/${id}`);
         fetchCommandes();
       } catch (error) {
         console.error("Erreur lors de la suppression:", error);

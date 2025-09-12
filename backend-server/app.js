@@ -11,7 +11,7 @@ const clientRouter = require("./routers/clientRouter");
 const commandeRouter = require("./routers/commandeRouter");
 
 const corsOption = {
-  origin: 'http://localhost:5173/'
+  origin: 'http://localhost:5174/'
 }
 
 const app = express();
@@ -35,5 +35,5 @@ app.use("/commandes", commandeRouter);
 
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => console.log(`Serveur démarré sur http://localhost:${PORT}`));

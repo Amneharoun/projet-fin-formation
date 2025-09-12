@@ -21,7 +21,7 @@ const ImportMedicament = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://localhost:5000/import", formData, {
+      const res = await axios.post("http://localhost:3000/import", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

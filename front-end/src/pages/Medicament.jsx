@@ -19,7 +19,7 @@ const Medicaments = () => {
   // 🔹 Charger les médicaments
   const fetchMeds = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/medicaments/");
+      const res = await axios.get("http://localhost:3000/medicaments/");
       setMeds(res.data);
     } catch (err) {
       console.error(err);
@@ -40,10 +40,10 @@ const Medicaments = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/medicaments/${editingId}`, form);
+        await axios.put(`http://localhost:3000/medicaments/${editingId}`, form);
         alert(" Médicament modifié");
       } else {
-        await axios.post("http://localhost:5000/medicaments", form);
+        await axios.post("http://localhost:3000/medicaments", form);
         alert("Médicament ajouté");
       }
       setForm({ nom: "", code: "", categorie: "", prix: "", stock: "", seuilAlerte: "", datePeremption: "" });
@@ -59,7 +59,7 @@ const Medicaments = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Supprimer ce médicament ?")) return;
     try {
-      await axios.delete(`http://localhost:5000/medicaments/${id}`);
+      await axios.delete(`http://localhost:3000/medicaments/${id}`);
       alert(" Médicament supprimé");
       fetchMeds();
     } catch (err) {

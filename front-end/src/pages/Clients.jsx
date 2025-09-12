@@ -16,7 +16,7 @@ export default function Clients() {
 
   const fetchClients = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/clients/");
+      const response = await axios.get("http://localhost:3000/clients/");
       setClients(response.data);
     } catch (error) {
       console.error("Erreur lors du chargement des clients:", error);
@@ -27,9 +27,9 @@ export default function Clients() {
     e.preventDefault();
     try {
       if (editingClient) {
-        await axios.put(`http://localhost:5000/clients/${editingClient._id}`, formData);
+        await axios.put(`http://localhost:3000/clients/${editingClient._id}`, formData);
       } else {
-        await axios.post("http://localhost:5000/clients", formData);
+        await axios.post("http://localhost:3000/clients", formData);
       }
       fetchClients();
       resetForm();
@@ -41,7 +41,7 @@ export default function Clients() {
   const handleDelete = async (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer ce client ?")) {
       try {
-        await axios.delete(`http://localhost:5000/clients/${id}`);
+        await axios.delete(`http://localhost:3000/clients/${id}`);
         fetchClients();
       } catch (error) {
         console.error("Erreur lors de la suppression:", error);

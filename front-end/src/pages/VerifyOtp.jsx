@@ -16,7 +16,7 @@ const VerifyOtp = () => {
 
     try {
       const otpToken = localStorage.getItem("otpToken");
-      const response = await fetch('http://localhost:5000/auth/email-verify', {
+      const response = await fetch('http://localhost:3000/auth/email-verify', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

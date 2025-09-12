@@ -13,7 +13,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/dashboard/overview", {
+      .get("http://localhost:3000/dashboard/overview", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       })
       .then((res) => {
